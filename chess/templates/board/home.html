@@ -1,0 +1,28 @@
+{% extends 'nav.html' %}
+
+{% load static %}
+
+{% block content %}
+    Upload an image and choose a method to use for finding the chessboard in that image. You may optionally give this run a custom name to make it easier to find later.
+    <br><br>
+    <form action='' method='post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="fieldWrapper">
+            {{ form.image.label_tag }}
+            {{ form.image }}
+            {{ form.image.errors }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.method.label_tag }}
+            {{ form.method }}
+            {{ form.method.errors }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.custom_name.label_tag }}
+            {{ form.custom_name }}
+            {{ form.custom_name.errors }}
+        </div>
+        <input type="submit" value="Run">
+    </form>
+{% endblock %}

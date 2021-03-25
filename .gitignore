@@ -1,0 +1,9 @@
+*.py[cod]
+__pycache__/
+
+secret.py
+venv
+.venv
+db.sqlite3
+media
+key.json

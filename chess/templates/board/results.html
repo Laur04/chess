@@ -1,0 +1,25 @@
+{% extends 'nav.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-6">
+            <img src="{{ run.input_image.url }}" width="100%" />
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-6">
+            <h2>{{ run.display_str }}</h2>
+            <h4>{{ run.time_ran }}</h4>
+            <br>
+            <h4>Method: {{ run_type }}</h4>
+            {% if not run.successful %}
+                This run failed
+            {% endif %}
+        </div>
+    </div>
+    <hr>
+    <h3>Output:</h3>
+    <div>
+        <img src="{{ output.output_image.url }}" width="90%" />
+    </div>
+{% endblock %}

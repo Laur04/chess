@@ -1,0 +1,11 @@
+{% extends 'nav.html' %}
+
+{% load static %}
+
+{% block content %}
+    <ul>
+        {% for r in runs %}
+            <li><a href="{% url 'board:results' r.id %}" class="{% if r.successful %}success{% else %}failure{% endif %}">{{ r.display_str }} - {{ r.time_ran }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
