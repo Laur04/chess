@@ -25,7 +25,7 @@ SECRET_KEY = ''
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'chess-server.sites.tjhsst.edu']
 
 SOCIAL_AUTH_ION_KEY = ""
 
@@ -161,7 +161,7 @@ SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'serve')
+STATIC_ROOT = os.path.join(BASE_DIR, 'serve/')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
